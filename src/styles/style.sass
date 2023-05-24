@@ -823,12 +823,16 @@ div, h2, p
     z-index: 2
     background-color: white
     clip-path: inset(0 0 0 0)
+
     .container
         height: calc( 100vh - 200px )
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
+
+        .card-box
+            min-width: 300px
 
 #contact
     padding-bottom: 0
@@ -1052,6 +1056,19 @@ div, h2, p
                 transform: rotate(-45deg) translate(.38em, -.32em)
             &:nth-of-type(2)
                 width: 0
+
+        &.MO .item
+            background-color: $baseMO
+        &.SQ .item
+            background-color: $baseSQ
+        &.AC .item
+            background-color: $baseAC
+        &.RC .item
+            background-color: $baseRC
+        &.OP .item
+            background-color: $baseOP
+        &.BS .item
+            background-color: $baseBS
 
     .nav-menu.active.set
         .nav-menu-items .item

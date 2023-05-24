@@ -860,6 +860,9 @@ div.title, h2.title, p.title {
   justify-content: center;
   align-items: center;
 }
+#blog .container .card-box {
+  min-width: 300px;
+}
 
 #contact {
   padding-bottom: 0;
@@ -1106,6 +1109,24 @@ div.title, h2.title, p.title {
 }
 .navbar-mobile .nav-menu.active .menu-button div:nth-of-type(2) {
   width: 0;
+}
+.navbar-mobile .nav-menu.active.MO .item {
+  background-color: #0055ff;
+}
+.navbar-mobile .nav-menu.active.SQ .item {
+  background-color: #7310eb;
+}
+.navbar-mobile .nav-menu.active.AC .item {
+  background-color: #065bf7;
+}
+.navbar-mobile .nav-menu.active.RC .item {
+  background-color: #00be68;
+}
+.navbar-mobile .nav-menu.active.OP .item {
+  background-color: #ff4000;
+}
+.navbar-mobile .nav-menu.active.BS .item {
+  background-color: #02488f;
 }
 .navbar-mobile .nav-menu.active.set .nav-menu-items .item {
   width: 100%;

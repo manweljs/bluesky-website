@@ -356,15 +356,17 @@ const handleMenuClick = (e) => {
     console.log(e)
     const navMobileMenu = document.querySelector(".navbar-mobile > .nav-menu")
     const isActive = navMobileMenu.classList.contains("active")
+    const theme = ["MO", "SQ", "RC", "AC", "BS", "OP"]
+    const n = theme[Math.floor(Math.random() * theme.length)];
     console.log(isActive)
     if (isActive) {
         console.log("masuk sini")
         navMobileMenu.classList.remove("set")
         setTimeout(() => {
-            navMobileMenu.classList.remove("active")
+            navMobileMenu.classList.remove("active", n)
         }, 800);
     } else {
-        navMobileMenu.classList.add("active")
+        navMobileMenu.classList.add("active", n)
         setTimeout(() => {
             navMobileMenu.classList.add("set")
         }, 100);

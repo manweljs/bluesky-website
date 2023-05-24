@@ -100,6 +100,43 @@ $phone: 480px
                         &.agc-1
                             width: 30%
 
+@media screen and ( max-width: $tablet )
+    #products
+        .section .slide-box .container
+            margin: auto 5vw!important
+
+            .columns
+                display: flex
+                flex-direction: column
+                flex-flow: column-reverse
+                justify-content: flex-end
+
+                .squirrel-1
+                    width: 50%!important
+
+                .agc-1
+                    width: 40%!important
+
+                .rc-1
+                    width: 50%!important
+
+                .bstudio-1
+                    width: 70%!important
+
+    #blog
+        overflow-y: auto!important
+        width: auto
+
+        .container
+            display: block
+            .blog-contents
+                flex-direction: row
+                display: flex
+                gap: 20px
+                width: auto
+                overflow-x: auto
+                cursor: grab
+
 @media screen and ( min-width: $laptop )
     .navbar-mobile
         display: none !important

@@ -210,11 +210,20 @@ setTimeout(function () {
     loadingPage.classList.add("close")
 }, 1000)
 
+let mobileAdjustment = 0
+if (isMobileDevice()) {
+    mobileAdjustment = window.innerHeight / 2
+    mobileAdjustment = mobileAdjustment + (mobileAdjustment / 2)
+}
 const sections = Array.from(document.querySelectorAll('.sections .section'));
 const sectionTops = sections.map(section => section.getBoundingClientRect().top + window.scrollY);
 
+console.log(mobileAdjustment)
 
 const initPage = () => {
+
+
+
     const navbar = document.querySelector(".navbar")
 
     const contentBox = document.querySelector("#content-box")
@@ -238,7 +247,7 @@ const initPage = () => {
 
     function handleScroll(zoomAbout, trigerTop) {
         // about
-        if (zoomAbout <= 0 && zoomAbout + about.offsetHeight > 0 && fixedTitleContent !== "about") {
+        if (zoomAbout <= 0 && zoomAbout + about.offsetHeight + mobileAdjustment > 0 && fixedTitleContent !== "about") {
             products.classList.remove("fix")
             productsNav.classList.remove("active");
         }
@@ -275,6 +284,8 @@ const initPage = () => {
 
 
         const trigerTop = Math.abs(document.querySelector(".triger").getBoundingClientRect().top);
+
+
         if (trigerTop > 500) {
             navbar.classList.add("min")
             about.classList.add("active-section")
@@ -295,7 +306,7 @@ const initPage = () => {
             const childRect = child.getBoundingClientRect();
 
             try {
-                if (childRect.top <= 0) {
+                if (childRect.top - mobileAdjustment <= 0) {
                     child.classList.add("visible")
                     subChild.classList.add("active");
                 } else {
@@ -355,20 +366,23 @@ const handleNavClick = (e) => {
 const handleMenuClick = (e) => {
     console.log(e)
     const navMobileMenu = document.querySelector(".navbar-mobile > .nav-menu")
+    const brandIcon = navMobileMenu.querySelector('img')
     const isActive = navMobileMenu.classList.contains("active")
     const theme = ["MO", "SQ", "RC", "AC", "BS", "OP"]
     const n = theme[Math.floor(Math.random() * theme.length)];
-    console.log(isActive)
+
+
     if (isActive) {
-        console.log("masuk sini")
         navMobileMenu.classList.remove("set")
         setTimeout(() => {
-            navMobileMenu.classList.remove("active", n)
+            navMobileMenu.classList.remove("active", "MO", "SQ", "RC", "AC", "BS", "OP")
         }, 800);
     } else {
         navMobileMenu.classList.add("active", n)
+        brandIcon.src = `src/images/icons/icon-${n}.svg`
         setTimeout(() => {
             navMobileMenu.classList.add("set")
+
         }, 100);
     }
 
@@ -376,3 +390,14 @@ const handleMenuClick = (e) => {
 
 
 console.log("hii")
+
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+// Usage
+if (isMobileDevice()) {
+    console.log("Mobile device detected");
+} else {
+    console.log("Not a mobile device");
+}

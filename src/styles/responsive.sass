@@ -102,26 +102,28 @@ $phone: 480px
 
 @media screen and ( max-width: $tablet )
     #products
-        .section .slide-box .container
-            margin: auto 5vw!important
+        .section .slide-box
 
-            .columns
-                display: flex
-                flex-direction: column
-                flex-flow: column-reverse
-                justify-content: flex-end
+            .container
+                margin: auto 5vw!important
 
-                .squirrel-1
-                    width: 50%!important
+                .columns
+                    display: flex
+                    flex-direction: column
+                    flex-flow: column-reverse
+                    justify-content: flex-end
 
-                .agc-1
-                    width: 40%!important
+                    .squirrel-1
+                        width: 50%!important
 
-                .rc-1
-                    width: 50%!important
+                    .agc-1
+                        width: 40%!important
 
-                .bstudio-1
-                    width: 70%!important
+                    .rc-1
+                        width: 50%!important
+
+                    .bstudio-1
+                        width: 70%!important
 
     #blog
         width: 100vw
@@ -251,9 +253,13 @@ $phone: 480px
         .section
             position: relative
             visibility: visible
+            height: auto
+
+            .columns
+                height: auto
 
             .slide-box
-                position: absolute
+                position: relative
                 animation: none
 
                 .container
@@ -282,6 +288,9 @@ $phone: 480px
 
         .container
             padding: 3rem 1.5rem
+
+            .columns
+                margin: 0!important
 
     #footer
         position: relative

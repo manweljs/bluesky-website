@@ -242,9 +242,13 @@
   #products .section {
     position: relative;
     visibility: visible;
+    height: auto;
+  }
+  #products .section .columns {
+    height: auto;
   }
   #products .section .slide-box {
-    position: absolute;
+    position: relative;
     animation: none;
   }
   #products .section .slide-box .container {
@@ -273,6 +277,9 @@
   }
   #contact .container {
     padding: 3rem 1.5rem;
+  }
+  #contact .container .columns {
+    margin: 0 !important;
   }
   #footer {
     position: relative;

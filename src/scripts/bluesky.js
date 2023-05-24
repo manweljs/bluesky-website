@@ -6,7 +6,7 @@ function beforeRefresh() {
 }
 window.addEventListener("beforeunload", beforeRefresh);
 
-const initParticles = () => {
+const initParticles = (n) => {
     tsParticles.load("tsparticles", {
         detectRetina: false,
         fpsLimit: 30,
@@ -79,7 +79,7 @@ const initParticles = () => {
                 blink: false,
                 color: "#e0e0e0",
                 consent: false,
-                distance: 50,
+                distance: n,
                 enable: true,
                 opacity: 0.8,
                 width: 2
@@ -129,7 +129,6 @@ const initParticles = () => {
                 image: {
                     height: 100,
                     replaceColor: true,
-                    src: "https://cdn.matteobruni.it/images/particles/github.svg",
                     width: 100
                 },
                 polygon: {
@@ -181,7 +180,7 @@ const initParticles = () => {
     });
 }
 
-initParticles()
+initParticles(30)
 
 
 // Adjust scroll speed

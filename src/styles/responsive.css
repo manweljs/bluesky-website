@@ -74,6 +74,9 @@
   #head h1 {
     font-size: 2em;
   }
+  #head .face-box {
+    left: 72%;
+  }
   .monitor-box .images {
     width: 30%;
     padding: 24px;

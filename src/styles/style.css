@@ -56,7 +56,7 @@ div.title, h2.title, p.title {
   transform: translate(-50%, 0);
   border-radius: 0;
   margin: auto;
-  transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   background-color: transparent;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -94,11 +94,12 @@ div.title, h2.title, p.title {
   color: #02488f;
 }
 .navbar.min {
-  width: 75%;
+  width: 75vw;
   border-radius: 30px;
   box-shadow: 0 5px 10px rgba(7, 170, 199, 0.1);
-  transform: translate(-50%, 24px);
+  top: 24px;
   background-color: white;
+  transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .navbar.min .navbar-item {
   color: rgb(36, 41, 47);
@@ -387,6 +388,7 @@ div.title, h2.title, p.title {
   align-items: center;
   color: white;
   text-align: center;
+  overflow: hidden;
 }
 #head h1, #head h6 {
   color: white;
@@ -400,7 +402,7 @@ div.title, h2.title, p.title {
   font-weight: 400;
 }
 #head #tsparticles {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -422,6 +424,7 @@ div.title, h2.title, p.title {
   bottom: 100px;
   display: flex;
   justify-content: space-evenly;
+  gap: 30px;
 }
 .monitor-box img {
   width: 250px;
@@ -997,4 +1000,50 @@ div.title, h2.title, p.title {
     transform: translateY(100vh);
     opacity: 1;
   }
+}
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  z-index: 9999;
+  padding: 16px 40px;
+}
+.navbar-mobile .logo {
+  height: 60px;
+}
+.navbar-mobile .nav-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar-mobile .menu-button {
+  width: 50px;
+  height: 50px;
+  display: block;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.navbar-mobile .menu-button div {
+  margin-top: 6px;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid #0d1117;
+}
+.navbar-mobile .menu-button div:nth-of-type(1) {
+  width: 100%;
+}
+.navbar-mobile .menu-button div:nth-of-type(3) {
+  width: 60%;
+}
+.navbar-mobile .menu-button div:nth-of-type(2) {
+  width: 80%;
+}
+.navbar-mobile .nav-menu-items {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

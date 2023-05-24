@@ -1,7 +1,7 @@
 $desktop-l: 1920px
 $desktop-m: 1370px
 $desktop-s: 1280px
-$laptop: 1024px
+$laptop: 1025px
 $tablet: 768px
 $phone: 480px
 
@@ -61,3 +61,32 @@ $phone: 480px
     .slide-box
         .title
             font-size: 2em
+
+@media screen and ( min-width: $laptop )
+    .navbar-mobile
+        display: none !important
+
+    .navbar
+        display: grid!important
+        grid-template-columns: 1fr 2fr 1fr
+        &.min
+            width: 90%!important
+
+@media screen and ( min-width: $tablet )
+
+    .navbar
+        display: none
+
+    #head
+        h1
+            font-size: 2em
+    .monitor-box
+        .images
+            width: 30%
+            padding: 24px
+            img
+                width: 100%
+
+@media screen and ( min-width: $phone )
+    .navbar
+        display: none

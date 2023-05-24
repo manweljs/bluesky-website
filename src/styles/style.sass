@@ -64,7 +64,8 @@ div, h2, p
     transform: translate(-50%, 0)
     border-radius: 0
     margin: auto
-    transition: .6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    transition: .6s $easeout
+
     background-color: transparent
     display: grid
     grid-template-columns: 1fr 3fr 1fr
@@ -100,11 +101,12 @@ div, h2, p
                 color: $primary
 
     &.min
-        width: 75%
+        width: 75vw
         border-radius: 30px
         box-shadow: 0 5px 10px rgba(7, 170, 199, 0.1)
-        transform: translate(-50%, 24px )
+        top: 24px
         background-color: white
+        transition: .6s $easeout
 
         .navbar-item
             color: $black
@@ -395,6 +397,7 @@ div, h2, p
     align-items: center
     color: white
     text-align: center
+    overflow: hidden
 
     h1, h6
         color: white
@@ -408,7 +411,7 @@ div, h2, p
         font-weight: 400
 
     #tsparticles
-        position: fixed
+        position: absolute
         top: 0
         left: 0
         width: 100%
@@ -429,6 +432,7 @@ div, h2, p
         bottom: 100px
         display: flex
         justify-content: space-evenly
+        gap: 30px
 
     img
         width: 250px
@@ -949,3 +953,46 @@ div, h2, p
     100%
         transform: translateY(100vh)
         opacity: 1
+
+.navbar-mobile
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    background-color: white
+    display: grid
+    grid-template-columns: 3fr 1fr
+    z-index: 9999
+    padding: 16px 40px
+
+    .logo
+        height: 60px
+
+    .nav-menu
+        display: flex
+        justify-content: flex-end
+    .menu-button
+        width: 50px
+        height: 50px
+        display: block
+        padding: 4px
+        display: flex
+        justify-content: center
+        align-items: flex-end
+        flex-direction: column
+        div
+            margin-top: 6px
+            width: 100%
+            height: 2px
+            border-bottom: 2px solid $dark
+
+            &:nth-of-type(1)
+                width: 100%
+            &:nth-of-type(3)
+                width: 60%
+
+            &:nth-of-type(2)
+                width: 80%
+
+    .nav-menu-items
+        display: none

@@ -54,4 +54,36 @@
   .slide-box .title {
     font-size: 2em;
   }
+}
+@media screen and (min-width: 1025px) {
+  .navbar-mobile {
+    display: none !important;
+  }
+  .navbar {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .navbar.min {
+    width: 90% !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+  #head h1 {
+    font-size: 2em;
+  }
+  .monitor-box .images {
+    width: 30%;
+    padding: 24px;
+  }
+  .monitor-box .images img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 480px) {
+  .navbar {
+    display: none;
+  }
 }/*# sourceMappingURL=responsive.css.map */

@@ -347,8 +347,30 @@ const handleNavClick = (e) => {
     const position = productIndexs.indexOf(target) - 1
     console.log(position)
     window.scrollTo(0, sectionTops[position]);
+    handleMenuClick(e)
 
 }
 
 
+const handleMenuClick = (e) => {
+    console.log(e)
+    const navMobileMenu = document.querySelector(".navbar-mobile > .nav-menu")
+    const isActive = navMobileMenu.classList.contains("active")
+    console.log(isActive)
+    if (isActive) {
+        console.log("masuk sini")
+        navMobileMenu.classList.remove("set")
+        setTimeout(() => {
+            navMobileMenu.classList.remove("active")
+        }, 800);
+    } else {
+        navMobileMenu.classList.add("active")
+        setTimeout(() => {
+            navMobileMenu.classList.add("set")
+        }, 100);
+    }
 
+}
+
+
+console.log("hii")

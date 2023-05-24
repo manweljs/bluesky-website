@@ -93,3 +93,34 @@ $phone: 480px
 @media screen and ( min-width: $phone )
     .navbar
         display: none
+
+    .navbar-mobile
+        left: 50%
+        transform: translate(-50%,0)
+
+    #head
+        h1
+            font-size: 2em
+
+        .container
+            padding: 24px
+
+@media screen and ( min-width: 0 )
+    .navbar
+        display: none
+
+    .navbar-mobile
+        left: 50%
+        transform: translate(-50%,0)
+
+    #head
+        h1
+            font-size: 2em
+
+        .container
+            padding: 24px
+
+    #blog
+        height: auto!important
+        .blog-contents
+            grid-template-columns: 1fr

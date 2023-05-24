@@ -4,7 +4,7 @@ function beforeRefresh() {
         top: 0,
     });
 }
-// window.addEventListener("beforeunload", beforeRefresh);
+window.addEventListener("beforeunload", beforeRefresh);
 
 const initParticles = () => {
     tsParticles.load("tsparticles", {

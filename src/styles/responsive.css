@@ -233,7 +233,48 @@
     min-height: unset;
     height: 500px;
   }
+  #about {
+    height: 100vh;
+  }
+  #about .container {
+    min-width: 80vw !important;
+  }
+  #products .section {
+    position: relative;
+    visibility: visible;
+  }
+  #products .section .slide-box {
+    position: absolute;
+    animation: none;
+  }
+  #products .section .slide-box .container {
+    margin-bottom: 80px !important;
+  }
+  #products .section .slide-box .has-text {
+    margin-bottom: 80px;
+  }
+  #products .section .slide-box.active {
+    height: auto;
+    animation: none;
+    padding: 50px 10px;
+  }
   #contact {
     height: auto;
+    display: block;
+    padding: 0;
+  }
+  #contact .contact-1 {
+    width: 360px;
+    height: auto;
+    opacity: 1;
+  }
+  #contact .contact-form {
+    width: 100%;
+  }
+  #contact .container {
+    padding: 3rem 1.5rem;
+  }
+  #footer {
+    position: relative;
   }
 }/*# sourceMappingURL=responsive.css.map */

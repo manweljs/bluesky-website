@@ -1,0 +1,35 @@
+$desktop-l: 1920px
+$desktop-m: 1370px
+$desktop-s: 1280px
+$laptop: 1024px
+$tablet: 768px
+$phone: 480px
+
+@media screen and ( max-width: $desktop-m )
+
+    .column.is-5
+        width: 50%!important
+
+    .title-fix
+        font-size: 8em
+
+    .transport-2
+        width: 50vw
+        height: auto
+        position: absolute
+        bottom: -56px
+        right: -73px
+        display: none
+
+    .products-nav
+        left: 50%
+        top: unset
+        bottom: 0
+        transform: translate(-50%, 0)
+        width: 100%
+        height: 70px
+        display: flex
+        justify-content: center
+
+        .nav
+            transform: translate(0, 100px)

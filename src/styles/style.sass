@@ -48,6 +48,9 @@ p
 div, h2, p
     color: $black
 
+    &.title
+        color: $black
+
 .hyphen::after
     content: "-"
 
@@ -154,8 +157,23 @@ div, h2, p
         padding: 25px
         cursor: pointer
         overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
         transition: .4s
         transform: translateX(-100px)
+        &:nth-of-type(1)
+            transition-delay: .1s
+        &:nth-of-type(2)
+            transition-delay: .2s
+        &:nth-of-type(3)
+            transition-delay: .3s
+        &:nth-of-type(4)
+            transition-delay: .4s
+        &:nth-of-type(5)
+            transition-delay: .5s
+        &:nth-of-type(6)
+            transition-delay: .6s
 
     &.active
         .nav
@@ -197,6 +215,11 @@ div, h2, p
     &.mo, &.sq, &.rc, &.bs, &.ac, &.op
         width: 100vw
         border-radius: 100px
+        visibility: hidden
+        transition: visibility 1s
+
+        &.visible
+            visibility: visible
 
     &.mo
         z-index: 1
@@ -472,6 +495,7 @@ div, h2, p
 .outline-image
     opacity: 0
     transition: .3s
+    max-width: 90%
     path, line, polyline, polygon
         stroke: $black
         stroke-width: 1
@@ -570,8 +594,6 @@ div, h2, p
         opacity: 1
 
 @keyframes  squirrel
-    0%
-        opacity: 0
     100%
         transform: translate(0, 0)
         opacity: 1
@@ -772,11 +794,11 @@ div, h2, p
             align-items: center
             justify-content: center
             top: 0
-            transform: translateY(100vh)
-            animation: slideToBottom .8s cubic-bezier(.57,.1,.5,.94) forwards
+            // transform: translateY(100vh)
+            animation: slideToBottom .7s cubic-bezier(.61,.43,.83,.63) forwards
 
             &.active
-                animation: slideFromBottom .8s cubic-bezier(.57,.1,.5,.94) forwards
+                animation: slideFromBottom .8s cubic-bezier(.15,.51,.3,.88) forwards
 
             .container
                 margin: 0 auto!important
@@ -911,8 +933,8 @@ div, h2, p
     0%
         transform: translateY(100vh)
         opacity: 0
-    40%
-        opacity: 0
+    20%
+        opacity: 1
     100%
         transform: translateY(0)
         opacity: 1
@@ -921,8 +943,6 @@ div, h2, p
     0%
         transform: translateY(0)
         opacity: 1
-    70%
-        opacity: 1
     100%
         transform: translateY(100vh)
-        opacity: 0
+        opacity: 1

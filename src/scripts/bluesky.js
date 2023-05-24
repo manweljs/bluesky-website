@@ -4,7 +4,7 @@ function beforeRefresh() {
         top: 0,
     });
 }
-window.addEventListener("beforeunload", beforeRefresh);
+// window.addEventListener("beforeunload", beforeRefresh);
 
 const initParticles = () => {
     tsParticles.load("tsparticles", {
@@ -295,8 +295,10 @@ const initPage = () => {
 
             try {
                 if (childRect.top <= 0) {
+                    child.classList.add("visible")
                     subChild.classList.add("active");
                 } else {
+                    child.classList.remove("visible")
                     subChild.classList.remove("active");
                 }
 

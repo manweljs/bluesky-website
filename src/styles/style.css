@@ -38,6 +38,9 @@ p {
 div, h2, p {
   color: rgb(36, 41, 47);
 }
+div.title, h2.title, p.title {
+  color: rgb(36, 41, 47);
+}
 
 .hyphen::after {
   content: "-";
@@ -152,8 +155,29 @@ div, h2, p {
   padding: 25px;
   cursor: pointer;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: 0.4s;
   transform: translateX(-100px);
+}
+.products-nav .nav:nth-of-type(1) {
+  transition-delay: 0.1s;
+}
+.products-nav .nav:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+.products-nav .nav:nth-of-type(3) {
+  transition-delay: 0.3s;
+}
+.products-nav .nav:nth-of-type(4) {
+  transition-delay: 0.4s;
+}
+.products-nav .nav:nth-of-type(5) {
+  transition-delay: 0.5s;
+}
+.products-nav .nav:nth-of-type(6) {
+  transition-delay: 0.6s;
 }
 .products-nav.active .nav {
   transform: translateX(0px);
@@ -201,6 +225,11 @@ div, h2, p {
 .section.mo, .section.sq, .section.rc, .section.bs, .section.ac, .section.op {
   width: 100vw;
   border-radius: 100px;
+  visibility: hidden;
+  transition: visibility 1s;
+}
+.section.mo.visible, .section.sq.visible, .section.rc.visible, .section.bs.visible, .section.ac.visible, .section.op.visible {
+  visibility: visible;
 }
 .section.mo {
   z-index: 1;
@@ -462,6 +491,7 @@ div, h2, p {
 .outline-image {
   opacity: 0;
   transition: 0.3s;
+  max-width: 90%;
 }
 .outline-image path, .outline-image line, .outline-image polyline, .outline-image polygon {
   stroke: rgb(36, 41, 47);
@@ -574,9 +604,6 @@ div, h2, p {
   }
 }
 @keyframes squirrel {
-  0% {
-    opacity: 0;
-  }
   100% {
     transform: translate(0, 0);
     opacity: 1;
@@ -795,11 +822,10 @@ div, h2, p {
   align-items: center;
   justify-content: center;
   top: 0;
-  transform: translateY(100vh);
-  animation: slideToBottom 0.8s cubic-bezier(0.57, 0.1, 0.5, 0.94) forwards;
+  animation: slideToBottom 0.7s cubic-bezier(0.61, 0.43, 0.83, 0.63) forwards;
 }
 #products .section .slide-box.active {
-  animation: slideFromBottom 0.8s cubic-bezier(0.57, 0.1, 0.5, 0.94) forwards;
+  animation: slideFromBottom 0.8s cubic-bezier(0.15, 0.51, 0.3, 0.88) forwards;
 }
 #products .section .slide-box .container {
   margin: 0 auto !important;
@@ -950,8 +976,8 @@ div, h2, p {
     transform: translateY(100vh);
     opacity: 0;
   }
-  40% {
-    opacity: 0;
+  20% {
+    opacity: 1;
   }
   100% {
     transform: translateY(0);
@@ -963,11 +989,8 @@ div, h2, p {
     transform: translateY(0);
     opacity: 1;
   }
-  70% {
-    opacity: 1;
-  }
   100% {
     transform: translateY(100vh);
-    opacity: 0;
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */

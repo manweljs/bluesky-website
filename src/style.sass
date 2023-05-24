@@ -12,6 +12,8 @@ $dark: #0d1117
 $dark-2: #21262d
 $light: #e6edf3
 
+$transparent-SQ: #67007c0d
+
 body
     margin: 0
     font-family: 'Bai Jamjuree', sans-serif
@@ -42,9 +44,6 @@ canvas
 
 p
     font-size: 1em
-
-// h1
-//     font-size: 2.5em!important
 
 div, h2, p
     color: $black
@@ -207,7 +206,7 @@ div, h2, p
         .transport-2, .transport-1
             svg
                 path, line, polyline, polygon
-                    fill: #0045f30d
+                    fill: rgba(4, 75, 255, 0.05)
 
                 #Shape-13
                     fill: none
@@ -216,6 +215,10 @@ div, h2, p
             svg
                 path, line, polyline, polygon
                     fill: none
+
+                .with-fill
+                    path, line, polyline, polygon
+                        fill: rgba(0, 72, 255, 0.04)
 
     &.sq
         // background-color: $baseSQ
@@ -226,7 +229,7 @@ div, h2, p
         .squirrel-2, .squirrel-1
             svg
                 path, line, polyline, polygon
-                    fill: #67007c07
+                    fill: $transparent-SQ
 
             #Path-15, #Path-16
                 fill: none
@@ -254,6 +257,11 @@ div, h2, p
         .slide-box
             background-image: linear-gradient(150deg, #ffffff, #ff5e29)
 
+            &.active
+                .opt-2
+                    animation: opt 4s forwards $easeout
+                    animation-delay: 0
+
         .opt-2, .opt-1
             svg
                 path, line, polyline, polygon
@@ -271,17 +279,15 @@ div, h2, p
                     opacity: 1
                     stroke-dashoffset: 0
 
-        &.active
-            .opt-2
-                animation: opt 4s forwards $easeout
-                animation-delay: 0
-
     &.ac
         // background-color: $baseAC
         z-index: 4
 
         .slide-box
             background-image: linear-gradient(150deg, #e2fbff, #065bf7)
+            &.active .agc-2
+                animation: agc 5s forwards $easeout
+                animation-delay: 0
 
         .agc-2, .agc-1
             svg
@@ -303,16 +309,15 @@ div, h2, p
                     opacity: 1
                     stroke-dashoffset: 0
 
-        &.active .agc-2
-            animation: agc 5s forwards $easeout
-            animation-delay: 0
-
     &.rc
         // background-color: $baseRC
         z-index: 5
 
         .slide-box
             background-image: linear-gradient(150deg, #ffffff, #00be68)
+            &.active .rc-2
+                animation: rc 3s forwards $easeout
+                animation-delay: .5s
 
         .rc-2, .rc-1
             svg
@@ -339,10 +344,6 @@ div, h2, p
                     stroke-width: 1
                     opacity: 1
                     stroke-dashoffset: 0
-
-        &.active .rc-2
-            animation: rc 3s forwards $easeout
-            animation-delay: .5s
 
     &.bs
         z-index: 6
@@ -505,7 +506,7 @@ div, h2, p
         animation: dash-3 50s alternate infinite
 
 .transport-1
-    width: 500px
+    width: 600px
     height: auto
 
 .squirrel-1
@@ -529,10 +530,6 @@ div, h2, p
     height: auto
     transform: scaleX(-1)
 
-.contact-1
-    width: 360px
-    height: auto
-
 .transport-2, .squirrel-2, .rc-2, .opt-2, .agc-2, .bstudio-2
     width: 900px
     height: auto
@@ -543,12 +540,10 @@ div, h2, p
 .transport-2
     transform: translate(-740px, 580px)
 
-.transport-2
     &.outline-image
         path, line, polyline, polygon
             stroke-width: .8
             opacity: 1
-            fill: $baseMO
             stroke-dashoffset: 0
 
 .active  .transport-2
@@ -697,8 +692,7 @@ div, h2, p
     width: 100%
     margin: auto
     min-height: 0
-    position: sticky
-    top: 20vh
+    // background-color: #a8a8a8
 
     .container
         height: 100%
@@ -707,14 +701,61 @@ div, h2, p
         justify-content: center
         align-items: center
         text-align: center
+        position: fixed
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+
+        h1
+            transform: translateY(50px)
+            opacity: 0
+            visibility: hidden
+            transition: 0
+        p
+            transform: translateY(50px)
+            opacity: 0
+            visibility: hidden
+            transition: 0
+
+    &.active-section
+        .container
+            h1
+                visibility: visible
+
+                transform: translateY(0)
+                opacity: 1
+                transition: .3s
+            p
+                visibility: visible
+
+                transform: translateY(0)
+                opacity: 1
+                transition: .3s
+                transition-delay: .3s
 
     .title
         transform-origin: bottom center
         transition: .3s
+    .title-fix-box
+        width: 100%
+        height: inherit
+        position: absolute
+        z-index: 9
+        top: 0
+        clip-path: inset(0 0 0 0)
 
 #products
     display: block
     position: relative
+    clip-path: inset(0 0 0 0)
+
+    .title-fix-box
+        width: 100%
+        height: 100%
+        position: absolute
+        z-index: 9
+        top: 0
+        clip-path: inset(0 0 0 0)
 
     .section
         position: sticky
@@ -723,6 +764,7 @@ div, h2, p
         overflow: hidden
         padding: 0
         border-radius: 0
+        clip-path: inset(0 0 0 0)
 
         .slide-box
             height: 100vh
@@ -754,15 +796,14 @@ div, h2, p
 
 #blog
     z-index: 2
+    background-color: white
+    clip-path: inset(0 0 0 0)
     .container
         height: calc( 100vh - 200px )
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
-
-#blog
-    background-color: white
 
 #contact
     padding-bottom: 0
@@ -790,7 +831,22 @@ div, h2, p
             height: 30px
             border-radius: 6px
             border: none
-            background-color: #efefef
+            background-color: $dark-2
+            color: $light
+
+        .textarea
+            min-height: 80px
+
+    &.fix
+        .contact-1
+            width: 360px
+            height: auto
+            opacity: 1
+            transition: 1s
+            transition-delay: .5s
+
+            svg
+                path, line, out
 
 .blog-contents
     display: grid

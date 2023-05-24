@@ -209,13 +209,16 @@ div, h2, p {
   background-image: linear-gradient(160deg, #dffeff, #0055ff);
 }
 .section.mo .transport-2 svg path, .section.mo .transport-2 svg line, .section.mo .transport-2 svg polyline, .section.mo .transport-2 svg polygon, .section.mo .transport-1 svg path, .section.mo .transport-1 svg line, .section.mo .transport-1 svg polyline, .section.mo .transport-1 svg polygon {
-  fill: rgba(0, 69, 243, 0.0509803922);
+  fill: rgba(4, 75, 255, 0.05);
 }
 .section.mo .transport-2 svg #Shape-13, .section.mo .transport-1 svg #Shape-13 {
   fill: none;
 }
 .section.mo .transport-1 svg path, .section.mo .transport-1 svg line, .section.mo .transport-1 svg polyline, .section.mo .transport-1 svg polygon {
   fill: none;
+}
+.section.mo .transport-1 svg .with-fill path, .section.mo .transport-1 svg .with-fill line, .section.mo .transport-1 svg .with-fill polyline, .section.mo .transport-1 svg .with-fill polygon {
+  fill: rgba(0, 72, 255, 0.04);
 }
 .section.sq {
   z-index: 2;
@@ -224,7 +227,7 @@ div, h2, p {
   background-image: linear-gradient(150deg, #ffffff, #7310eb);
 }
 .section.sq .squirrel-2 svg path, .section.sq .squirrel-2 svg line, .section.sq .squirrel-2 svg polyline, .section.sq .squirrel-2 svg polygon, .section.sq .squirrel-1 svg path, .section.sq .squirrel-1 svg line, .section.sq .squirrel-1 svg polyline, .section.sq .squirrel-1 svg polygon {
-  fill: rgba(103, 0, 124, 0.0274509804);
+  fill: rgba(103, 0, 124, 0.0509803922);
 }
 .section.sq .squirrel-2 #Path-15, .section.sq .squirrel-2 #Path-16, .section.sq .squirrel-1 #Path-15, .section.sq .squirrel-1 #Path-16 {
   fill: none;
@@ -251,6 +254,10 @@ div, h2, p {
 .section.op .slide-box {
   background-image: linear-gradient(150deg, #ffffff, #ff5e29);
 }
+.section.op .slide-box.active .opt-2 {
+  animation: opt 4s forwards cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-delay: 0;
+}
 .section.op .opt-2 svg path, .section.op .opt-2 svg line, .section.op .opt-2 svg polyline, .section.op .opt-2 svg polygon, .section.op .opt-1 svg path, .section.op .opt-1 svg line, .section.op .opt-1 svg polyline, .section.op .opt-1 svg polygon {
   fill: rgba(124, 60, 0, 0.0274509804);
 }
@@ -266,15 +273,15 @@ div, h2, p {
   opacity: 1;
   stroke-dashoffset: 0;
 }
-.section.op.active .opt-2 {
-  animation: opt 4s forwards cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation-delay: 0;
-}
 .section.ac {
   z-index: 4;
 }
 .section.ac .slide-box {
   background-image: linear-gradient(150deg, #e2fbff, #065bf7);
+}
+.section.ac .slide-box.active .agc-2 {
+  animation: agc 5s forwards cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-delay: 0;
 }
 .section.ac .agc-2 svg path, .section.ac .agc-2 svg line, .section.ac .agc-2 svg polyline, .section.ac .agc-2 svg polygon, .section.ac .agc-1 svg path, .section.ac .agc-1 svg line, .section.ac .agc-1 svg polyline, .section.ac .agc-1 svg polygon {
   fill: rgba(8, 0, 124, 0.0274509804);
@@ -294,15 +301,15 @@ div, h2, p {
   opacity: 1;
   stroke-dashoffset: 0;
 }
-.section.ac.active .agc-2 {
-  animation: agc 5s forwards cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation-delay: 0;
-}
 .section.rc {
   z-index: 5;
 }
 .section.rc .slide-box {
   background-image: linear-gradient(150deg, #ffffff, #00be68);
+}
+.section.rc .slide-box.active .rc-2 {
+  animation: rc 3s forwards cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-delay: 0.5s;
 }
 .section.rc .rc-2 svg path, .section.rc .rc-2 svg line, .section.rc .rc-2 svg polyline, .section.rc .rc-2 svg polygon, .section.rc .rc-1 svg path, .section.rc .rc-1 svg line, .section.rc .rc-1 svg polyline, .section.rc .rc-1 svg polygon {
   fill: rgba(4, 97, 9, 0.0274509804);
@@ -324,10 +331,6 @@ div, h2, p {
   stroke-width: 1;
   opacity: 1;
   stroke-dashoffset: 0;
-}
-.section.rc.active .rc-2 {
-  animation: rc 3s forwards cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation-delay: 0.5s;
 }
 .section.bs {
   z-index: 6;
@@ -497,7 +500,7 @@ div, h2, p {
 }
 
 .transport-1 {
-  width: 500px;
+  width: 600px;
   height: auto;
 }
 
@@ -527,11 +530,6 @@ div, h2, p {
   transform: scaleX(-1);
 }
 
-.contact-1 {
-  width: 360px;
-  height: auto;
-}
-
 .transport-2, .squirrel-2, .rc-2, .opt-2, .agc-2, .bstudio-2 {
   width: 900px;
   height: auto;
@@ -543,11 +541,9 @@ div, h2, p {
 .transport-2 {
   transform: translate(-740px, 580px);
 }
-
 .transport-2.outline-image path, .transport-2.outline-image line, .transport-2.outline-image polyline, .transport-2.outline-image polygon {
   stroke-width: 0.8;
   opacity: 1;
-  fill: #0055ff;
   stroke-dashoffset: 0;
 }
 
@@ -718,8 +714,6 @@ div, h2, p {
   width: 100%;
   margin: auto;
   min-height: 0;
-  position: sticky;
-  top: 20vh;
 }
 #about .container {
   height: 100%;
@@ -728,15 +722,64 @@ div, h2, p {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#about .container h1 {
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0;
+}
+#about .container p {
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0;
+}
+#about.active-section .container h1 {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.3s;
+}
+#about.active-section .container p {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.3s;
+  transition-delay: 0.3s;
 }
 #about .title {
   transform-origin: bottom center;
   transition: 0.3s;
 }
+#about .title-fix-box {
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+}
 
 #products {
   display: block;
   position: relative;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+}
+#products .title-fix-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 #products .section {
   position: sticky;
@@ -745,6 +788,8 @@ div, h2, p {
   overflow: hidden;
   padding: 0;
   border-radius: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 #products .section .slide-box {
   height: 100vh;
@@ -778,6 +823,9 @@ div, h2, p {
 
 #blog {
   z-index: 2;
+  background-color: white;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 #blog .container {
   height: calc(100vh - 200px);
@@ -785,10 +833,6 @@ div, h2, p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-#blog {
-  background-color: white;
 }
 
 #contact {
@@ -820,7 +864,18 @@ div, h2, p {
   height: 30px;
   border-radius: 6px;
   border: none;
-  background-color: #efefef;
+  background-color: #21262d;
+  color: #e6edf3;
+}
+#contact .contact-form .textarea {
+  min-height: 80px;
+}
+#contact.fix .contact-1 {
+  width: 360px;
+  height: auto;
+  opacity: 1;
+  transition: 1s;
+  transition-delay: 0.5s;
 }
 
 .blog-contents {

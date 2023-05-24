@@ -271,11 +271,16 @@ const initPage = () => {
 
 
     window.addEventListener('scroll', function () {
+
+
         const trigerTop = Math.abs(document.querySelector(".triger").getBoundingClientRect().top);
         if (trigerTop > 500) {
             navbar.classList.add("min")
+            about.classList.add("active-section")
         } else {
             navbar.classList.remove("min")
+            about.classList.remove("active-section")
+
 
         }
 
@@ -332,19 +337,6 @@ const handleProductNav = (e) => {
 
 const fixedTitle = document.getElementById('title-fix');
 let fixedTitleContent = ""
-
-function typeWrite() {
-
-    return false
-    // const delay = 150
-    // fixedTitle.textContent = '';
-    // // console.log(fixedTitleContent)
-    // for (let i = 0; i < fixedTitleContent.length; i++) {
-    //     setTimeout(() => {
-    //         fixedTitle.textContent += fixedTitleContent.charAt(i);
-    //     }, delay * i);
-    // }
-}
 
 const handleNavClick = (e) => {
     const target = e.target.textContent

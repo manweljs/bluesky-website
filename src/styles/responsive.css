@@ -114,8 +114,7 @@
     width: 70% !important;
   }
   #blog {
-    overflow-y: auto !important;
-    width: auto;
+    width: 100vw;
   }
   #blog .container {
     display: block;
@@ -125,6 +124,7 @@
     display: flex;
     gap: 20px;
     width: auto;
+    overflow: hidden;
     overflow-x: auto;
     cursor: grab;
   }
@@ -206,5 +206,34 @@
   }
   .monitor-box .images img {
     width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .navbar-mobile .nav-menu-items {
+    left: -3.5vw;
+  }
+  .monitor-box .images {
+    width: 100%;
+    padding: 24px;
+    overflow: hidden;
+  }
+  .monitor-box .images img {
+    width: 50%;
+  }
+  .title-fix {
+    display: none;
+  }
+  .has-text {
+    padding: 0.75rem !important;
+  }
+  .slide-box h2.title {
+    font-size: 1.5em;
+  }
+  #blog {
+    min-height: unset;
+    height: 500px;
+  }
+  #contact {
+    height: auto;
   }
 }/*# sourceMappingURL=responsive.css.map */

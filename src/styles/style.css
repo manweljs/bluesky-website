@@ -1070,6 +1070,7 @@ div.title, h2.title, p.title {
   position: absolute;
   top: 7%;
   width: 100vw;
+  z-index: 3;
 }
 .navbar-mobile .nav-menu-items .options .option {
   padding: 20px 40px;
@@ -1175,4 +1176,8 @@ div.title, h2.title, p.title {
 }
 .navbar-mobile .nav-menu.active.set .options .option:nth-of-type(5) {
   transition-delay: 0.8s;
+}
+
+.is-mobile .is-last {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

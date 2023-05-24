@@ -6,6 +6,8 @@ function beforeRefresh() {
 }
 window.addEventListener("beforeunload", beforeRefresh);
 
+let particleDistance = 40
+
 const initParticles = (n) => {
     tsParticles.load("tsparticles", {
         detectRetina: false,
@@ -180,7 +182,7 @@ const initParticles = (n) => {
     });
 }
 
-initParticles(30)
+
 
 
 // Adjust scroll speed
@@ -342,10 +344,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const handleProductNav = (e) => {
-    let target = e.target.dataset.product;
-    const productIndexs = ["about", "meta-optimise", "squirrel", "optimise", "agency-connect", "recruit-complete", "bluesky-studio"]
-    const position = productIndexs.indexOf(target)
-    window.scrollTo(0, sectionTops[position]);
+    const target = e.target.dataset.product;
+
+    if (isMobileDevice()) {
+        let targetById = document.querySelector("#" + target)
+        targetById.scrollIntoView()
+    } else {
+
+        const productIndexs = ["meta-optimise", "squirrel", "optimise", "agency-connect", "recruit-complete", "bluesky-studio"]
+        const position = productIndexs.indexOf(target) + 1
+        console.log(sections)
+
+        console.log(sectionTops, position)
+        window.scrollTo(0, sectionTops[position]);
+    }
+
 }
 
 const fixedTitle = document.getElementById('title-fix');
@@ -353,8 +366,9 @@ let fixedTitleContent = ""
 
 const handleNavClick = (e) => {
     const target = e.target.textContent
+
     console.log(sectionTops)
-    const productIndexs = ["Home", "About", "Products", "-", "-", "-", "-", "-", "Blog", "Contact"]
+    const productIndexs = ["Home", "About", "Products", "-", "-", "-", "-", "-", "-", "Blog", "Contact"]
     const position = productIndexs.indexOf(target) - 1
     console.log(position)
     window.scrollTo(0, sectionTops[position]);
@@ -398,7 +412,12 @@ function isMobileDevice() {
 
 if (isMobileDevice()) {
     document.body.classList.add("is-mobile")
-    console.log("Mobile device detected");
+
+    if (window.innerWidth < 600) {
+        particleDistance = particleDistance - 15
+    }
+
+    initParticles(particleDistance - 10)
 } else {
-    console.log("Not a mobile device");
+    initParticles(particleDistance)
 }

@@ -557,6 +557,10 @@ div, h2, p {
   animation-delay: 2s;
 }
 
+.contact-1 .outline-image path, .contact-1 .outline-image line, .contact-1 .outline-image polyline, .contact-1 .outline-image polygon {
+  stroke: #e6edf3;
+}
+
 @keyframes delay-opacity {
   100% {
     opacity: 1;

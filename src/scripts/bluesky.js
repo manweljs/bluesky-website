@@ -241,12 +241,14 @@ const initPage = () => {
         // about
         if (zoomAbout <= 0 && zoomAbout + about.offsetHeight > 0 && fixedTitleContent !== "about") {
             products.classList.remove("fix")
+            productsNav.classList.remove("active");
         }
 
         // products
         const productsSectionVisible = sectionTops[0] - trigerTop <= 0 && sectionTops[5] - trigerTop + sections[5].offsetHeight > 0;
         if (productsSectionVisible && fixedTitleContent !== "products") {
             products.classList.add("fix")
+            productsNav.classList.add("active");
         }
 
         // blog
@@ -280,7 +282,7 @@ const initPage = () => {
         } else {
             navbar.classList.remove("min")
             about.classList.remove("active-section")
-
+            productsNav.classList.remove("active")
 
         }
 
@@ -309,15 +311,14 @@ const initPage = () => {
 
         if (zoomAbout <= 0) {
             const title = contentBox.querySelector("#about .title")
-            productsNav.classList.add("active")
             about.classList.add("fix")
-            let x = Math.abs(zoomAbout) / 350
-            if (x > .7) {
-                x = .7
+            let x = Math.abs(zoomAbout) / 380
+            if (x > .5) {
+                x = .5
             }
             title.style.transform = `scale(${1 + x})`
         } else {
-            productsNav.classList.remove("active")
+
             about.classList.remove("fix")
         }
     });

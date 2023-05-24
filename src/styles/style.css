@@ -874,6 +874,10 @@ div.title, h2.title, p.title {
 }
 #contact .header {
   text-align: center;
+  margin-bottom: 30px;
+}
+#contact .header .title {
+  margin-bottom: 0.5em;
 }
 #contact .columns {
   height: 100%;

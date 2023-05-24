@@ -5,13 +5,23 @@
   .title-fix {
     font-size: 8em;
   }
-  .transport-2 {
-    width: 50vw;
-    height: auto;
-    position: absolute;
-    bottom: -56px;
-    right: -73px;
+  .transport-2, .squirrel-2, .rc-2, .opt-2, .agc-2, .bstudio-2 {
     display: none;
+  }
+  .squirrel-1, .rc-1, .opt-1 {
+    width: 80%;
+  }
+  .transport-1 {
+    width: 90%;
+  }
+  .agc-1 {
+    width: 50%;
+  }
+  .rc-1 {
+    width: 70%;
+  }
+  .bstudio-1 {
+    width: 90%;
   }
   .products-nav {
     left: 50%;
@@ -25,5 +35,23 @@
   }
   .products-nav .nav {
     transform: translate(0, 100px);
+  }
+}
+@media screen and (max-width: 1280px) {
+  #contact .contact-form {
+    width: 80%;
+    align-self: flex-start;
+  }
+  #contact .contact-form .label {
+    font-size: 0.9em;
+    font-weight: normal;
+    opacity: 0.8;
+  }
+  .title-fix {
+    font-size: 6em;
+    right: 50px;
+  }
+  .slide-box .title {
+    font-size: 2em;
   }
 }/*# sourceMappingURL=responsive.css.map */

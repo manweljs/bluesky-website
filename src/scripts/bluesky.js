@@ -395,8 +395,9 @@ function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-// Usage
+
 if (isMobileDevice()) {
+    document.body.classList.add("is-mobile")
     console.log("Mobile device detected");
 } else {
     console.log("Not a mobile device");

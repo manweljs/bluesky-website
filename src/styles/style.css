@@ -1073,7 +1073,8 @@ div.title, h2.title, p.title {
   font-size: 3em;
   font-weight: 800;
   cursor: pointer;
-  background-color: #e6edf3;
+  background-color: #7310eb;
+  color: white;
   overflow: hidden;
   transition: 0.3s;
 }

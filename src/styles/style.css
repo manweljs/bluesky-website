@@ -855,13 +855,21 @@ div.title, h2.title, p.title {
 }
 #blog .container {
   height: calc(100vh - 200px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
-#blog .container .card-box {
+#blog .container .blog-contents {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+#blog .container .blog-contents .card-box {
   min-width: 300px;
+}
+#blog .container .blog-contents .card-box img {
+  height: 250px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #contact {
@@ -909,18 +917,6 @@ div.title, h2.title, p.title {
   opacity: 1;
   transition: 1s;
   transition-delay: 0.5s;
-}
-
-.blog-contents {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.blog-contents .card-box img {
-  height: 250px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 #footer {

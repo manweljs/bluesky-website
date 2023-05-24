@@ -826,13 +826,19 @@ div, h2, p
 
     .container
         height: calc( 100vh - 200px )
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
+        display: block
 
-        .card-box
-            min-width: 300px
+        .blog-contents
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            gap: 20px
+
+            .card-box
+                min-width: 300px
+                img
+                    height: 250px
+                    width: 100%
+                    object-fit: cover
 
 #contact
     padding-bottom: 0
@@ -876,17 +882,6 @@ div, h2, p
             opacity: 1
             transition: 1s
             transition-delay: .5s
-
-.blog-contents
-    display: grid
-    grid-template-columns: repeat(4, 1fr)
-    gap: 20px
-
-    .card-box
-        img
-            height: 250px
-            width: 100%
-            object-fit: cover
 
 #footer
     min-height: 50px

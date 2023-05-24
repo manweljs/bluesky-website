@@ -197,10 +197,14 @@
   #head .container {
     padding: 24px;
   }
-  #blog {
-    height: auto !important;
+}
+@media screen and (max-width: 767px) {
+  .monitor-box .images {
+    width: 100%;
+    padding: 24px;
+    overflow: hidden;
   }
-  #blog .blog-contents {
-    grid-template-columns: 1fr;
+  .monitor-box .images img {
+    width: 50%;
   }
 }/*# sourceMappingURL=responsive.css.map */

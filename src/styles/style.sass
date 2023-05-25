@@ -478,6 +478,17 @@ div, h2, p
     pointer-events: none
     z-index: 999
 
+    .title
+        font-size: 5vh
+        position: absolute
+        bottom: -50px
+
+    div
+        width: 100%
+        background-color: $dark
+        height: 25vh
+        transition: .2s
+
     &.MO div
         background-color: $baseMO
     &.SQ div
@@ -490,12 +501,6 @@ div, h2, p
         background-color: $baseOP
     &.BS div
         background-color: $baseBS
-
-    div
-        width: 100%
-        background-color: $dark
-        height: 25vh
-        transition: .2s
 
     .preloading
         position: absolute

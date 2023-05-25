@@ -471,6 +471,17 @@ div.title, h2.title, p.title {
   pointer-events: none;
   z-index: 999;
 }
+.loading-page .title {
+  font-size: 5vh;
+  position: absolute;
+  bottom: -50px;
+}
+.loading-page div {
+  width: 100%;
+  background-color: #0d1117;
+  height: 25vh;
+  transition: 0.2s;
+}
 .loading-page.MO div {
   background-color: #0055ff;
 }
@@ -488,12 +499,6 @@ div.title, h2.title, p.title {
 }
 .loading-page.BS div {
   background-color: #02488f;
-}
-.loading-page div {
-  width: 100%;
-  background-color: #0d1117;
-  height: 25vh;
-  transition: 0.2s;
 }
 .loading-page .preloading {
   position: absolute;

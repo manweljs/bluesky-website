@@ -1,5 +1,4 @@
 function beforeRefresh() {
-    loadingPage.classList.remove("close")
     window.scrollTo({
         top: 0,
     });

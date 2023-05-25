@@ -323,15 +323,16 @@ div, h2, p
                     fill: none
         .agc-2
             width: 750px
-            bottom: -200px
-            right: 0
-            transform: translate(540px, 300px) scaleX(-1)
+            bottom: -345px
+            right: -320px
+            transform: translate(540px, 300px)
             opacity: 1
 
             &.outline-image
                 path, line, polyline
+                    fill: none
                     stroke-width: 1
-                    opacity: 1
+                    opacity: .7
                     stroke-dashoffset: 0
 
     &.rc
@@ -615,7 +616,7 @@ div, h2, p
 
 @keyframes  agc
     100%
-        transform: translate(0, 0) scaleX(-1)
+        transform: translate(0, 0)
         opacity: 1
 
 @keyframes rec

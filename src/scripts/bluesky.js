@@ -206,11 +206,15 @@ document.addEventListener('wheel', function (event) {
     });
 }, { passive: false });
 
+const theme = ["MO", "SQ", "RC", "AC", "BS", "OP"]
+const themeSelect = theme[Math.floor(Math.random() * theme.length)];
+
 
 const loadingPage = document.querySelector(".loading-page")
+loadingPage.classList.add(themeSelect)
 setTimeout(function () {
     loadingPage.classList.add("close")
-}, 1000)
+}, 4000)
 
 let mobileAdjustment = 0
 if (isMobileDevice()) {

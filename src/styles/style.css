@@ -471,10 +471,52 @@ div.title, h2.title, p.title {
   pointer-events: none;
   z-index: 999;
 }
+.loading-page.MO div {
+  background-color: #0055ff;
+}
+.loading-page.SQ div {
+  background-color: #7310eb;
+}
+.loading-page.AC div {
+  background-color: #065bf7;
+}
+.loading-page.RC div {
+  background-color: #00be68;
+}
+.loading-page.OP div {
+  background-color: #ff4000;
+}
+.loading-page.BS div {
+  background-color: #02488f;
+}
 .loading-page div {
   width: 100%;
-  background-color: #0073ff;
+  background-color: #0d1117;
   height: 25vh;
+  transition: 0.2s;
+}
+.loading-page .preloading {
+  position: absolute;
+  width: 25vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+.loading-page .preloading svg path {
+  stroke: #e6edf3;
+  stroke-width: 1px;
+  opacity: 0.9;
+  fill: none;
+  stroke-dashoffset: -1;
+  stroke-dasharray: 1;
+  animation: preloading 4s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+@keyframes preloading {
+  to {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1;
+  }
 }
 .loading-page.close .rec-1 {
   animation: rec 0.5s forwards cubic-bezier(0.13, 1.15, 0.38, 0.56);
@@ -491,6 +533,9 @@ div.title, h2.title, p.title {
 .loading-page.close .rec-4 {
   animation: rec 0.5s forwards cubic-bezier(0.13, 1.15, 0.38, 0.56);
   animation-delay: 0.9s;
+}
+.loading-page.close .preloading {
+  display: none;
 }
 
 .outline-image {

@@ -478,16 +478,54 @@ div, h2, p
     pointer-events: none
     z-index: 999
 
+    &.MO div
+        background-color: $baseMO
+    &.SQ div
+        background-color: $baseSQ
+    &.AC div
+        background-color: $baseAC
+    &.RC div
+        background-color: $baseRC
+    &.OP div
+        background-color: $baseOP
+    &.BS div
+        background-color: $baseBS
+
     div
         width: 100%
-        background-color: #0073ff
+        background-color: $dark
         height: 25vh
+        transition: .2s
+
+    .preloading
+        position: absolute
+        width: 25vh
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 5
+
+        // &::after
+        //     content: "Welcome to BlueSky Creations"
+
+        svg path
+            stroke: $light
+            stroke-width: 1px
+            opacity: .9
+            fill: none
+            stroke-dashoffset: -1
+            stroke-dasharray: 1
+            animation: preloading 4s $easeout forwards
+
+    @keyframes preloading
+        to
+            stroke-dashoffset: 0
+            stroke-dasharray: 1
 
     &.close
         .rec-1
             animation: rec .5s forwards cubic-bezier(.13,1.15,.38,.56)
             animation-delay: 0s
-
         .rec-2
             animation: rec .5s forwards cubic-bezier(.13,1.15,.38,.56)
             animation-delay: .3s
@@ -497,6 +535,9 @@ div, h2, p
         .rec-4
             animation: rec .5s forwards cubic-bezier(.13,1.15,.38,.56)
             animation-delay: .9s
+
+        .preloading
+            display: none
 
 .outline-image
     opacity: 0

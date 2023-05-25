@@ -232,6 +232,7 @@
   #blog {
     min-height: unset;
     height: 500px;
+    padding-top: 100px;
   }
   #about {
     height: 150vh;
@@ -243,6 +244,24 @@
     position: relative;
     visibility: visible;
     height: auto;
+  }
+  #products .section.mo .slide-box {
+    background-image: linear-gradient(125deg, #dffeff, #0055ff);
+  }
+  #products .section.sq .slide-box {
+    background-image: linear-gradient(125deg, #ffffff, #7310eb);
+  }
+  #products .section.op .slide-box {
+    background-image: linear-gradient(125deg, #ffffff, #ff5e29);
+  }
+  #products .section.ac .slide-box {
+    background-image: linear-gradient(125deg, #e2fbff, #065bf7);
+  }
+  #products .section.rc .slide-box {
+    background-image: linear-gradient(125deg, #ffffff, #00be68);
+  }
+  #products .section.bs .slide-box {
+    background-image: linear-gradient(125deg, #eafff9, #0071e3);
   }
   #products .section .columns {
     height: auto;
@@ -262,10 +281,15 @@
     animation: none;
     padding: 50px 10px;
   }
+  #products .section .transport-1 {
+    width: 100% !important;
+    margin: 30px 0 !important;
+  }
   #contact {
     height: auto;
     display: block;
     padding: 0;
+    padding-top: 100px;
   }
   #contact .contact-1 {
     width: 360px;
@@ -283,5 +307,8 @@
   }
   #footer {
     position: relative;
+  }
+  #footer .link-groups {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=responsive.css.map */

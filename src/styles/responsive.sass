@@ -222,6 +222,9 @@ $phone: 480px
         .nav-menu-items
             left: -3.5vw
 
+        // &.min
+        //     background-color: rgba(255, 255,255, .2)
+
     .monitor-box
         .images
             width: 100%
@@ -243,6 +246,7 @@ $phone: 480px
     #blog
         min-height: unset
         height: 500px
+        padding-top: 100px
 
     #about
         height: 150vh
@@ -254,6 +258,19 @@ $phone: 480px
             position: relative
             visibility: visible
             height: auto
+
+            &.mo .slide-box
+                background-image: linear-gradient(125deg, #dffeff, #0055ff)
+            &.sq .slide-box
+                background-image: linear-gradient(125deg, #ffffff, #7310eb)
+            &.op .slide-box
+                background-image: linear-gradient(125deg, #ffffff, #ff5e29)
+            &.ac .slide-box
+                background-image: linear-gradient(125deg, #e2fbff, #065bf7)
+            &.rc .slide-box
+                background-image: linear-gradient(125deg, #ffffff, #00be68)
+            &.bs .slide-box
+                background-image: linear-gradient(125deg, #eafff9, #0071e3)
 
             .columns
                 height: auto
@@ -273,10 +290,15 @@ $phone: 480px
                 animation: none
                 padding: 50px 10px
 
+            .transport-1
+                width: 100%!important
+                margin: 30px 0!important
+
     #contact
         height: auto
         display: block
         padding: 0
+        padding-top: 100px
 
         .contact-1
             width: 360px
@@ -294,3 +316,6 @@ $phone: 480px
 
     #footer
         position: relative
+
+        .link-groups
+            flex-direction: column

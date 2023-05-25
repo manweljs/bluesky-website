@@ -227,27 +227,25 @@ const initPage = () => {
 
 
     const navbar = document.querySelector(".navbar")
-
+    const navbarMobile = document.querySelector(".navbar-mobile")
     const contentBox = document.querySelector("#content-box")
     const contentBoxTop = contentBox.getBoundingClientRect().top + window.scrollY
     const about = document.querySelector("#about")
     const products = document.querySelector("#products")
     const blog = document.querySelector("#blog")
     const contact = document.querySelector("#contact")
-
-
     const aboutTop = about.getBoundingClientRect().top + window.scrollY
     const productsTop = products.getBoundingClientRect().top + window.scrollY
     const scrollStart = window.scrollY
-    // console.log(productsTop)
-    // sections.forEach((section, index) => section.classList.add("set"));
-
-    // sections[6].style.top = sectionTops[6] + "px" // blog
-    // sections[7].style.top = sectionTops[7] + "px" // contact
-    // sections[8].style.top = sectionTops[8] + "px" //footer
     const productsNav = document.querySelector(".products-nav")
 
     function handleScroll(zoomAbout, trigerTop) {
+        const blogTop = blog.getBoundingClientRect().top
+
+        if (blogTop - window.innerHeight <= 0) {
+            productsNav.classList.remove("active");
+        }
+
         // about
         if (zoomAbout <= 0 && zoomAbout + about.offsetHeight + mobileAdjustment > 0 && fixedTitleContent !== "about") {
             products.classList.remove("fix")
@@ -283,16 +281,15 @@ const initPage = () => {
 
 
     window.addEventListener('scroll', function () {
-
-
         const trigerTop = Math.abs(document.querySelector(".triger").getBoundingClientRect().top);
-
 
         if (trigerTop > 500) {
             navbar.classList.add("min")
+            navbarMobile.classList.add("min")
             about.classList.add("active-section")
         } else {
             navbar.classList.remove("min")
+            navbarMobile.classList.remove("min")
             about.classList.remove("active-section")
             productsNav.classList.remove("active")
 
@@ -328,7 +325,11 @@ const initPage = () => {
             if (x > .5) {
                 x = .5
             }
-            title.style.transform = `scale(${1 + x})`
+
+            if (!isMobile) {
+                title.style.transform = `scale(${1 + x})`
+            }
+
         } else {
 
             about.classList.remove("fix")
@@ -365,15 +366,20 @@ const fixedTitle = document.getElementById('title-fix');
 let fixedTitleContent = ""
 
 const handleNavClick = (e) => {
-    const target = e.target.textContent
+    const target = e.target.textContent.toLowerCase()
+    // console.log(sectionTops)
+    // const productIndexs = ["Home", "About", "Products", "-", "-", "-", "-", "-", "-", "Blog", "Contact"]
+    // let position = productIndexs.indexOf(target) - 1
+    console.log(target)
 
-    console.log(sectionTops)
-    const productIndexs = ["Home", "About", "Products", "-", "-", "-", "-", "-", "-", "Blog", "Contact"]
-    const position = productIndexs.indexOf(target) - 1
-    console.log(position)
-    window.scrollTo(0, sectionTops[position]);
+    let targetElement = document.querySelector("#" + target)
+
+    if (target) {
+        targetElement.scrollIntoView()
+        window.scrollBy(0, 5)
+    }
+
     handleMenuClick(e)
-
 }
 
 
@@ -402,15 +408,13 @@ const handleMenuClick = (e) => {
 
 }
 
-
-console.log("hii")
-
 function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
 
+const isMobile = isMobileDevice()
 
-if (isMobileDevice()) {
+if (isMobile) {
     document.body.classList.add("is-mobile")
 
     if (window.innerWidth < 600) {

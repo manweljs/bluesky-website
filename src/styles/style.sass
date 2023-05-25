@@ -884,16 +884,38 @@ div, h2, p
             transition-delay: .5s
 
 #footer
-    min-height: 50px
-    height: 8vh
-    display: flex
-    justify-content: center
-    align-items: center
-    position: absolute
+    min-height: 8vh
+    display: block
+    position: relative
     bottom: 0
     background-color: $dark-2
-    div, h2, p
+
+    div, h2, p, a
         color: $light
+
+    a
+        transition: .3s
+        &:hover
+            color: $baseOP
+    .link-groups
+        padding-top: 30px
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 20px
+
+    .brand-icon
+        padding: 30px
+        display: flex
+        justify-content: center
+        align-items: center
+
+        img
+            width: 50px
+            filter: brightness(10) grayscale(1) contrast(10)
+
+    .copyright
+        padding-bottom: 50px
 
 .sections
     height: auto

@@ -1253,4 +1253,29 @@ div.title, h2.title, p.title {
 
 .is-mobile .is-last {
   display: none;
+}
+
+#backsound {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  border-radius: 100px;
+  padding: 10px 18px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+}
+#backsound span {
+  line-height: 10px;
+}
+#backsound .stop {
+  padding: 4px 0;
+  display: none;
+}
+#backsound.playing .stop {
+  display: block;
+}
+#backsound.playing .play {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -223,10 +223,18 @@ if (isMobileDevice()) {
 const sections = Array.from(document.querySelectorAll('.sections .section'));
 const sectionTops = sections.map(section => section.getBoundingClientRect().top + window.scrollY);
 
-console.log(mobileAdjustment)
+
+let backsoundPlay = false
+const backsound = document.querySelector("#backsound")
+const audio = backsound.querySelector("audio")
+
+const handleBacksound = () => {
+    backsoundPlay ? audio.pause() : audio.play()
+    backsoundPlay = !backsoundPlay
+    backsound.classList.toggle("playing")
+}
 
 const initPage = () => {
-
 
 
     const navbar = document.querySelector(".navbar")

@@ -205,6 +205,11 @@
     width: 50%;
   }
 }
+@media screen and (max-width: 690px) {
+  #backsound {
+    display: none;
+  }
+}
 @media screen and (max-width: 480px) {
   .navbar-mobile .nav-menu-items {
     left: -3.5vw;

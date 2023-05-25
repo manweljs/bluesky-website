@@ -1186,3 +1186,27 @@ div, h2, p
 .is-mobile
     .is-last
         display: none
+
+#backsound
+    position: fixed
+    bottom: 30px
+    left: 30px
+    border-radius: 100px
+    padding: 10px 18px
+    background-color: white
+    cursor: pointer
+    z-index: 100
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05)
+
+    span
+        line-height: 10px
+    .stop
+        padding: 4px 0
+        display: none
+
+    &.playing
+        .stop
+            display: block
+
+        .play
+            display: none

@@ -273,6 +273,30 @@
   #products .section .slide-box .container {
     margin-bottom: 80px !important;
   }
+  #products .section .slide-box .container .columns .transport-1 {
+    width: 100% !important;
+    margin: 30px 0 !important;
+  }
+  #products .section .slide-box .container .columns .squirrel-1 {
+    width: 100% !important;
+    margin: 30px 0 !important;
+  }
+  #products .section .slide-box .container .columns .opt-1 {
+    width: 100% !important;
+    margin: 30px 0 !important;
+  }
+  #products .section .slide-box .container .columns .agc-1 {
+    width: 62% !important;
+    margin: 30px 0 !important;
+  }
+  #products .section .slide-box .container .columns .rc-1 {
+    width: 100% !important;
+    margin: 30px 0 !important;
+  }
+  #products .section .slide-box .container .columns .bstudio-1 {
+    width: 100% !important;
+    margin: 30px 0 !important;
+  }
   #products .section .slide-box .has-text {
     margin-bottom: 80px;
   }
@@ -280,10 +304,6 @@
     height: auto;
     animation: none;
     padding: 50px 10px;
-  }
-  #products .section .transport-1 {
-    width: 100% !important;
-    margin: 30px 0 !important;
   }
   #contact {
     height: auto;
